@@ -5,6 +5,7 @@ import 'package:flutter_app_movie/app/models/movie.dart';
 import 'package:get/get.dart';
 import 'package:flutter_app_movie/app/views/widget/widget.dart';
 import '../../../constants.dart';
+import 'listMovieCard.widget.dart';
 
 class PlayVideo extends GetView {
   @override
@@ -29,12 +30,12 @@ class PlayVideo extends GetView {
               ))
             ],
           ),
-          SizedBox(height: kDefaultPadding / 2),
+          SizedBox(height: kDefaultPadding),
           TitleDurationAndFabBtn(movie: movie),
           genres(movie),
           Padding(
             padding: EdgeInsets.symmetric(
-              vertical: kDefaultPadding / 2,
+              vertical: kDefaultPadding ,
               horizontal: kDefaultPadding,
             ),
             child: Text(
@@ -43,7 +44,7 @@ class PlayVideo extends GetView {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding*2),
             child: Text(
               movie.plot,
               style: TextStyle(
@@ -52,6 +53,19 @@ class PlayVideo extends GetView {
             ),
           ),
           CastAndCrew(casts: movie.cast),
+          Padding(
+            padding: const EdgeInsets.all(kDefaultPadding),
+            child: Text(
+              "recommend",
+              style: Theme.of(context).textTheme.headline5,
+              textAlign: TextAlign.start,
+            ),
+          ),
+          Container(
+            height: 200,
+            width: double.infinity,
+            child: ListMovieCard(movies:controller.movies),
+          ),
         ],
       ),
     );
@@ -59,7 +73,7 @@ class PlayVideo extends GetView {
 
   Widget genres(Movie movie) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
+      padding: EdgeInsets.symmetric(vertical: kDefaultPadding),
       child: SizedBox(
         height: 30,
         child: ListView.builder(
@@ -79,11 +93,11 @@ class PlayVideo extends GetView {
       margin: EdgeInsets.only(left: kDefaultPadding),
       padding: EdgeInsets.symmetric(
         horizontal: kDefaultPadding,
-        vertical: kDefaultPadding / 4, // 5 padding top and bottom
+        vertical: kDefaultPadding/4, // 5 padding top and bottom
       ),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black26),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(6),
       ),
       child: Text(
         genre,
@@ -91,4 +105,6 @@ class PlayVideo extends GetView {
       ),
     );
   }
+
+
 }

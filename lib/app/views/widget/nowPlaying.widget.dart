@@ -1,8 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_movie/app/controllers/home.controller.dart';
 import 'package:flutter_app_movie/app/models/movie.dart';
-import 'file:///C:/project/flutter_app_movie/lib/app/views/widget/playVideo.widget.dart';
+import 'package:flutter_app_movie/app/views/widget/widget.dart';
 import 'package:get/get.dart';
 
 class NowPlaying extends StatelessWidget {
@@ -12,11 +13,12 @@ class NowPlaying extends StatelessWidget {
       PageController(viewportFraction: 1, keepPage: false, initialPage: 0);
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      controller: pageController,
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => _buidMovie(context, movies[index]),
-      itemCount: movies.length,
+    return CarouselSlider(
+      items: movies.map((e) => _buidMovie(context,e)).toList(),
+      options: CarouselOptions(
+        autoPlay:true,
+        viewportFraction:1,
+      ),
     );
   }
 
