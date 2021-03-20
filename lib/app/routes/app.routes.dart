@@ -5,5 +5,6 @@ class AppRoutes{
   static const String ACCOUNT ="/account";
   static const String SEARCH ="/search";
   static const String DOWNLOAD ="/download";
+  static const String PLAYVIDEO ="/playVideo";
 
 }

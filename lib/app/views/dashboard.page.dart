@@ -4,6 +4,8 @@ import 'package:flutter_app_movie/app/controllers/dashboard.controller.dart';
 import 'package:flutter_app_movie/app/views/pages.dart';
 import 'package:get/get.dart';
 
+import '../../constants.dart';
+
 class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,32 +13,25 @@ class DashboardPage extends StatelessWidget {
     return GetBuilder<DashboardController>(
       builder: (controller) {
         return Scaffold(
+          backgroundColor: Colors.white,
           body: SafeArea(
             child: IndexedStack(
               index: controller.tabIndex,
-              children: [
-                HomePage(),
-                SearchPage(),
-                DownloadPage(),
-                AccountPage()
-              ],
+              children: [HomePage(), SearchPage(), AccountPage()],
             ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             unselectedItemColor: Colors.black45,
-            selectedItemColor: Colors.black,
+            selectedItemColor: kSecondaryColor,
             onTap: controller.changeTabIndex,
             currentIndex: controller.tabIndex,
             showSelectedLabels: false,
             showUnselectedLabels: false,
             //type: BottomNavigationBarType.fixed,
             items: [
-              _bottomNavigationBarItem(
-                  icon: CupertinoIcons.house_alt, label: "home"),
+              _bottomNavigationBarItem(icon: CupertinoIcons.tv, label: "home"),
               _bottomNavigationBarItem(
                   icon: CupertinoIcons.search, label: "search"),
-              _bottomNavigationBarItem(
-                  icon: CupertinoIcons.arrow_down_to_line, label: "download"),
               _bottomNavigationBarItem(
                   icon: CupertinoIcons.person, label: "account"),
             ],

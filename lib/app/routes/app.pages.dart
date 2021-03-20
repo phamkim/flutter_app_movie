@@ -1,7 +1,9 @@
 
+import 'package:flutter_app_movie/app/bindings/playVideo.binding.dart';
 import 'package:flutter_app_movie/app/views/pages.dart';
 import 'package:flutter_app_movie/app/bindings/bindings.dart';
 import 'package:flutter_app_movie/app/routes/app.routes.dart';
+import 'package:flutter_app_movie/app/views/widget/playVideo.widget.dart';
 import 'package:get/get.dart';
 
 class AppPages{
@@ -22,14 +24,14 @@ class AppPages{
         binding: AccountBinding()
     ),
     GetPage(
-        name: AppRoutes.DOWNLOAD,
-        page: ()=>DownloadPage(),
-        binding: DownloadBinding()
-    ),
-    GetPage(
         name: AppRoutes.SEARCH,
         page: ()=>SearchPage(),
         binding: SearchBinding()
+    ),
+    GetPage(
+        name: AppRoutes.PLAYVIDEO,
+        page: ()=>PlayVideo(),
+        binding: PlayVideoBinding()
     )
   ];
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app_movie/app/routes/app.pages.dart';
 import 'package:flutter_app_movie/app/routes/app.routes.dart';
 import 'package:flutter_app_movie/app/themes/app.themes.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: AppRoutes.DASHBOARD,
       getPages: AppPages.list,
       debugShowCheckedModeBanner: false,
-      darkTheme: AppThemes.dark,
+      darkTheme: AppThemes.light,
       theme: AppThemes.light,
       themeMode: ThemeMode.system,
     );
