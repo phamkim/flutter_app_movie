@@ -247,7 +247,7 @@ class PlayVideoController extends GetxController {
         BetterPlayerConfiguration(
             aspectRatio: 16 / 9,
             fit: BoxFit.contain,
-            autoPlay: true,
+            autoPlay: false,
             controlsConfiguration: controlsConfiguration);
     betterPlayerController = BetterPlayerController(betterPlayerConfiguration);
     betterPlayerController

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_movie/app/animation/fadeAnimation.dart';
 
 import '../../../../constants.dart';
 import 'castCard.widget.dart';
@@ -21,11 +22,11 @@ class CastAndCrew extends StatelessWidget {
           ),
           SizedBox(height: kDefaultPadding),
           SizedBox(
-            height: 130,
+            height: 140,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: casts.length,
-              itemBuilder: (context, index) => CastCard(cast: casts[index]),
+              itemBuilder: (context, index) => FadeAnimation(0.2,CastCard(cast: casts[index])),
             ),
           )
         ],

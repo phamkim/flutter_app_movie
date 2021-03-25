@@ -15,19 +15,18 @@ class PlayVideo extends GetView {
     final movie = controller.movie;
     return Scaffold(
       body: ListView(
-        physics: BouncingScrollPhysics(),
         children: <Widget>[
           Stack(
             children: [
               AspectRatio(
                 aspectRatio: 16 / 9,
                 child:
-                    BetterPlayer(controller: controller.betterPlayerController),
+                BetterPlayer(controller: controller.betterPlayerController),
               ),
               SafeArea(
                   child: BackButton(
-                color: Colors.white,
-              ))
+                    color: Colors.white,
+                  ))
             ],
           ),
           SizedBox(height: kDefaultPadding),

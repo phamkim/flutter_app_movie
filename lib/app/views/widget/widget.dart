@@ -6,3 +6,4 @@ export 'movieCard.widget.dart';
 export 'nowPlaying.widget.dart';
 export 'playVideo.widget.dart';
 export 'titleDuration.widget.dart';
+export 'profile.item.widget.dart';
